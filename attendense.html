@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #maindiv{
+            margin: 100px 100px;
+            position: fixed;
+            width: 50%;
+            height: 40%;
+            color: brown;
+            font-weight: 100;
+            background-color: azure;
+
+        }
+       
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Cheakall()">Cheakall</button>
+    <button onclick="UnCheakall()">Uncheckall</button>
+    <br>
+ 
+    <div id="maindiv">asdf</div>
+    <script>
+        for(var i=101;i<166;i++){
+            document.write("<input type='checkbox' onclick='abc()' value="+i+">"+i+"</br>");
+        }
+        var allstu=document.getElementsByTagName("input");
+       
+        function abc(){
+           
+           
+            allabs="";
+            for(var i=0;i<allstu.length;i++){
+                if(!allstu[i].checked){
+                    allabs+=allstu[i].value + ",";
+                }
+            }
+           
+            document.getElementById("maindiv").innerHTML=allabs.substring(0,allabs.length-1);
+        }
+        function Cheakall(){
+           
+            console.log(allstu);
+            for(var i=0;i<allstu.length;i++){
+                allstu[i].checked=true;
+            }
+        }
+   
+        function UnCheakall(){
+           
+            for(var i=0;i<allstu.length;i++){
+                allstu[i].checked=false
+            }
+            allabs="";
+                       
+            document.getElementById("maindiv").innerHTML=allabs.substring(0,allabs.length-1);
+        
+        }
+
+    </script>
+</body>
+</html>
