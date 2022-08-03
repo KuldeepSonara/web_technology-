@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<form>
+	<input type="text" name="" id="uname" placeholder="name"> <br>
+	<input type="text" name="" id="enno" placeholder="enrollnmentnumber"> <br>
+	+91<input type="text" name="" id="number" placeholder="number"><br>
+	<input type="text" name=""  placeholder="address"> <br>
+	<input type="text" name="" id="city" placeholder="city"> <br>
+	<input type="text" name="" id="state" placeholder="state"> <br>
+	<input type="text" name="" id="pin" placeholder="pincode"> <br>
+	<input type="text" name="" id="gmail" placeholder="gmail"> <br>
+	<input type="text" name="" id="password" placeholder="password"> <br>
+	<input type="text" name="" id="confirm password" placeholder="confirm password"> <br>
+	<input type="button" value="submit" onclick="f1()">
+
+	</form>
+
+	<script type="text/javascript">
+		function f1() {
+			
+		var a= document.getElementById('uname').value;
+		var f= document.getElementById('enno').value;
+		var b= document.getElementById('number').value;
+		var c= document.getElementById('pin').value;
+		var d= document.getElementById('gmail').value;
+		var e= document.getElementById('password').value;
+		var m= document.getElementById('state').value;
+		var k= document.getElementById('city').value;
+		var cp= document.getElementById('confirm password').value;
+
+
+		var ucheck= /^[a-zA-Z]{1}[a-zA-Z0-9]+[_.]?[a-zA-Z0-9]+$/;
+		var ncheck=/^[6-9]{1}[0-9]{9}$/;
+		var pcheck=/^[3-4]{1}[0-9]{5}$/;
+		var gcheck=/^[a-zA-Z]{1}[a-zA-Z0-9]+[_.]?[a-zA-Z0-9]+\@(gmail|yahoo)\.(com|in)$/;
+		var scheck=/^(?=.*[0-9])(?=.+[@!#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,12}$/;
+		var ocheck=/^[0-9]{11}$/;
+		var mcheck=/^[a-zA-Z]+$/;
+		
+
+
+		var regx = new RegExp(ucheck);
+		var regn = new RegExp(ncheck);
+		var regp = new RegExp(pcheck);
+		var regg = new RegExp(gcheck);
+		var regs = new RegExp(scheck);
+		var rego = new RegExp(ocheck);
+		var regm = new RegExp(mcheck);
+
+
+
+		if(regx.test(a))
+		{
+			if (regn.test(b)) {
+				if (regp.test(c)) {
+					if (regg.test(d)) {
+						if (regs.test(e)) {
+							if (rego.test(f)) {
+								if (e==cp) {
+									if (regm.test(m)) {
+										if (regm.test(k)) {
+					alert('success');
+									}else{
+									alert('invalid city name');
+								}
+								}else{
+									alert(' invalid state name');
+								}
+								}else{
+									alert ('confirm password invalid');
+												}
+													}
+							else{
+								alert('invalid enrollnmentnumber');
+							}
+						}
+						else{
+							alert('invalid password');
+						}
+					}
+					else{
+						alert('invalid gmail');
+					}
+				}
+				else
+				{
+					alert('invalid pincode')
+				}
+			}
+			else
+			{
+				alert('mobile number invalid');
+			}
+		}
+		else
+		{
+			alert('username invalid');
+		}
+	}
+		
+	</script>
+
+</body>
+</html>
