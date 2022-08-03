@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		n=parseInt(prompt("enter number"));
+		cal=0;
+		count=1;
+		
+			while(n != 0)
+		{
+			sum=n%10;
+			for(m=1;m<=sum;m++)
+			{
+				cal++;
+			}
+			for(i=1;i<=cal;i++)
+			{
+				count=count*sum;
+			}
+			total=total+count;
+			
+			n=parseInt(n/10);
+			
+		}
+		if(total==n)
+		{
+			document.write(n +"&nbsp is armstrong");
+		}
+		else
+		{
+			document.write(n +"&nbsp is not armstrong");
+		}
+		
+
+	</script>
+
+</body>
+</html>
